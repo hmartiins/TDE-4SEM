@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         'dark100': '#1F2025',
+        'blue100': '#205BF1',
+        'blue200': '#0036C2'
       },
     },
   },

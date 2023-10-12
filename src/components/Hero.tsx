@@ -1,3 +1,5 @@
+import { Button } from ".";
+
 export function Hero() {
   return (
     <section className="max-w-full overflow-hidden">
@@ -10,9 +12,25 @@ export function Hero() {
       </h2>
 
       <div className="relative w-full h-screen">
+        <div className="flex justify-center mt-10 mx-5">
+          <Button
+            type="button"
+            title="Baixar Documento"
+            aria-label="Baixar Documento"
+          >
+            Baixar Documento
+          </Button>
+        </div>
+
         <img
-          className="absolute translate-x-[-15%] max-w-none"
+          className="z-10 absolute translate-x-[-15%] max-w-none"
           src="./assets/splash01.png"
+          alt="aa"
+        />
+
+        <img
+          className="z-20 w-full relative"
+          src="./assets/graphsExamples.png"
           alt="aa"
         />
       </div>
