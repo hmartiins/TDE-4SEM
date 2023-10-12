@@ -1,3 +1,12 @@
+import { Header, Hero } from "./components";
+
 export function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <>
+      <Header />
+      <main className="bg-dark100 h-screen">
+        <Hero />
+      </main>
+    </>
+  );
 }
