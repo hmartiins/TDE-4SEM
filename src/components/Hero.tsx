@@ -1,4 +1,5 @@
-import { Button } from ".";
+import { Button, Card } from ".";
+import { MEMBERS } from "../constants";
 
 export function Hero() {
   return (
@@ -29,10 +30,37 @@ export function Hero() {
         />
 
         <img
-          className="z-20 w-full relative"
+          className="z-20 w-full relative mt-10"
           src="./assets/graphsExamples.png"
-          alt="aa"
+          alt="Graficos"
         />
+
+        <section className="relative z-20 mx-5">
+          <p className="text-white font-bold text-lg mt-14 mb-8">
+            Integrantes do nosso grupo
+          </p>
+
+          <div className="grid grid-cols-2 gap-2">
+            {MEMBERS.map((member) => (
+              <Card>
+                <div className="flex justify-between gap-4 items-center px-7 py-5">
+                  <img
+                    className="rounded-full border-2 border-white w-14"
+                    src={member.image}
+                    alt={member.name}
+                  />
+
+                  <div>
+                    <p className="text-white font-bold">{member.name}</p>
+                    <span className="text-white -mt-1 block">
+                      {member.age} anos
+                    </span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </section>
       </div>
     </section>
   );
