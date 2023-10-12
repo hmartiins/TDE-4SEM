@@ -4,7 +4,7 @@ export function App() {
   return (
     <>
       <Header />
-      <main className="bg-dark100 h-full pb-16">
+      <main className="bg-dark100 h-full">
         <Hero />
       </main>
     </>
