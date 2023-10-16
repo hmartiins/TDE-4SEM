@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <section className="max-w-full overflow-hidden">
       <h1 className="text-[40px] font-black text-white text-center mx-5 pt-5">
-        Análise Enem Com O Passar Dos Anos!
+        ENEM 2021: Educação e Finanças
       </h1>
       <h2 className="text-lg text-white text-center mx-5 mt-5">
-        Análise de dados realizadas pelos alunos da Universidade Católica de
-        Santos com base em dados de fontes abertas.
+        Uma Análise Comparativa Utilizando Dados de Fontes Públicas para
+        Compreender o Investimento Educacional
       </h2>
 
       <div className="relative w-full">
