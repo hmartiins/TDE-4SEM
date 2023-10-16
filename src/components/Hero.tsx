@@ -12,7 +12,7 @@ export function Hero() {
         Santos com base em dados de fontes abertas.
       </h2>
 
-      <div className="relative w-full h-screen">
+      <div className="relative w-full">
         <div className="flex justify-center mt-10 mx-5">
           <Button
             type="button"
@@ -42,8 +42,8 @@ export function Hero() {
 
           <div className="grid grid-cols-2 gap-2">
             {MEMBERS.map((member) => (
-              <Card>
-                <div className="flex justify-between gap-4 items-center px-7 py-5">
+              <Card key={member.name}>
+                <div className="flex justify-between gap-2 items-center px-5 py-5">
                   <img
                     className="rounded-full border-2 border-white w-14"
                     src={member.image}
