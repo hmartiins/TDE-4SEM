@@ -1,5 +1,6 @@
 import { Button, Card } from ".";
 import { MEMBERS } from "../constants";
+import { AvarageScoreByRegion, InvestmentAndAverageRating } from "./Charts";
 
 export function Hero() {
   return (
@@ -22,19 +23,16 @@ export function Hero() {
             Baixar Documento
           </Button>
         </div>
-
         <img
           className="z-10 absolute translate-x-[-15%] max-w-none"
           src="./assets/splash01.png"
           alt="aa"
         />
-
         <img
           className="z-20 w-full relative mt-10"
           src="./assets/graphsExamples.png"
           alt="Graficos"
         />
-
         <section className="relative z-20 mx-5">
           <p className="text-white font-bold text-lg mt-14 mb-8">
             Integrantes do nosso grupo
@@ -61,6 +59,7 @@ export function Hero() {
             ))}
           </div>
         </section>
+        <InvestmentAndAverageRating />
       </div>
     </section>
   );
