@@ -1,7 +1,7 @@
 import { Chart, ChartWrapperOptions } from "react-google-charts";
 
 const data = [
-  ["", "Investimento em %", "Nota Média"],
+  ["", "Investimento", "Nota Média"],
   ["Norte", 0.91, 0.24],
   ["Nordeste", 0.56, 0.95],
   ["Centro-Oeste", 1.0, 0.96],
@@ -20,7 +20,7 @@ export function InvestmentAndAverageRating() {
     <Chart
       chartType="Bar"
       width="100%"
-      height="400px"
+      height="200px"
       data={data}
       options={options}
     />

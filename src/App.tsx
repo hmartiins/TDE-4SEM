@@ -1,4 +1,10 @@
 import { Description, Header, Hero, Information } from "./components";
+import {
+  AvarageScoreByRegion,
+  GenderDistribution,
+  InvestmentAndAverageRating,
+  RegionPercentage,
+} from "./components/Charts";
 
 export function App() {
   return (
@@ -10,6 +16,11 @@ export function App() {
         <Information />
 
         <Description />
+
+        <AvarageScoreByRegion />
+        <GenderDistribution />
+        <InvestmentAndAverageRating />
+        <RegionPercentage />
       </main>
     </>
   );

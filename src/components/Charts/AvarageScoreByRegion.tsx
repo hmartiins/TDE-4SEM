@@ -11,6 +11,6 @@ const data = [
 
 export function AvarageScoreByRegion() {
   return (
-    <Chart chartType="ColumnChart" width="100%" height="400px" data={data} />
+    <Chart chartType="ColumnChart" width="100%" height="200px" data={data} />
   );
 }

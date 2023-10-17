@@ -1,6 +1,5 @@
 import { Button, Card } from ".";
 import { MEMBERS } from "../constants";
-// import { InvestmentAndAverageRating } from "./Charts";
 
 export function Hero() {
   return (
@@ -43,7 +42,7 @@ export function Hero() {
               <Card key={member.name}>
                 <div className="flex justify-between gap-2 items-center px-5 py-5">
                   <img
-                    className="rounded-full border-2 border-white w-14"
+                    className="rounded-full border-2 border-white w-11"
                     src={member.image}
                     alt={member.name}
                   />
@@ -59,7 +58,6 @@ export function Hero() {
             ))}
           </div>
         </section>
-        {/* <InvestmentAndAverageRating /> */}
       </div>
     </section>
   );
