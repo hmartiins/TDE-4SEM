@@ -1,15 +1,15 @@
-import { Chart } from "react-google-charts";
+import { Chart, ChartWrapperOptions } from "react-google-charts";
 
 const data = [
-  ["Year", "Investimento em %", "Nota Média"],
-  ["Norte", 1000, 400, 200],
-  ["Nordeste", 1170, 460, 250],
-  ["Centro-Oeste", 660, 1120, 300],
-  ["Sudeste", 1030, 540, 350],
-  ["Sul", 1030, 540, 350],
+  ["", "Investimento em %", "Nota Média"],
+  ["Norte", 0.91, 0.24],
+  ["Nordeste", 0.56, 0.95],
+  ["Centro-Oeste", 1.0, 0.96],
+  ["Sudeste", 0.7, 1.0],
+  ["Sul", 0.34, 0.99],
 ];
 
-const options = {
+const options: ChartWrapperOptions["options"] = {
   chart: {
     title: "Comparação de Investimento e Nota Média por Região",
   },

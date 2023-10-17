@@ -1,6 +1,6 @@
 import { Button, Card } from ".";
 import { MEMBERS } from "../constants";
-import { AvarageScoreByRegion, InvestmentAndAverageRating } from "./Charts";
+// import { InvestmentAndAverageRating } from "./Charts";
 
 export function Hero() {
   return (
@@ -59,7 +59,7 @@ export function Hero() {
             ))}
           </div>
         </section>
-        <InvestmentAndAverageRating />
+        {/* <InvestmentAndAverageRating /> */}
       </div>
     </section>
   );
