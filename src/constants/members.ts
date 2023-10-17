@@ -12,7 +12,7 @@ export const MEMBERS = [
   {
     name: "Rennys",
     image: "/assets/peoples/rennys.jpg",
-    age: 22,
+    age: 24,
   },
   {
     name: "Vitor",
