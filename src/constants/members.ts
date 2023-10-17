@@ -15,7 +15,7 @@ export const MEMBERS = [
     age: 22,
   },
   {
-    name: "Victor",
+    name: "Vitor",
     image: "/assets/peoples/victor.jpg",
     age: 23,
   },

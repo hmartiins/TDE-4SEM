@@ -1,11 +1,13 @@
-import { Header, Hero } from "./components";
+import { Header, Hero, Information } from "./components";
 
 export function App() {
   return (
     <>
       <Header />
-      <main className="bg-dark100 h-full">
+      <main className="bg-dark100">
         <Hero />
+
+        <Information />
       </main>
     </>
   );
