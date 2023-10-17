@@ -37,6 +37,8 @@ export function Description() {
         className="z-20 mx-auto mt-7"
         src="./assets/lighting.png"
         alt="A imagem retrata uma cena noturna com um abajur em cima de uma mesa, situada sob um céu estrelado. O abajur emite uma luz suave que ilumina as estrelas ao redor. As cores predominantes na imagem são branco, azul e preto."
+        decoding="async"
+        loading="lazy"
       />
     </section>
   );

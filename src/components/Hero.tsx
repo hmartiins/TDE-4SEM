@@ -45,6 +45,8 @@ export function Hero() {
                     className="rounded-full border-2 border-white w-11"
                     src={member.image}
                     alt={member.name}
+                    decoding="async"
+                    loading="lazy"
                   />
 
                   <div>
