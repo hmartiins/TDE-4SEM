@@ -69,16 +69,31 @@ export function Hero() {
             horizontalResponsiveClasses,
           ])
         }>
-          <p className="text-white font-bold text-lg mt-14 mb-8">
+          <p className={
+            clsx([
+              "text-slate-300 font-bold text-lg mt-14 mb-8",
+              "md:text-2xl"
+            ])
+          }>
             Integrantes do nosso grupo
           </p>
 
-          <div className="grid grid-cols-2 gap-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {MEMBERS.map((member) => (
               <Card key={member.name}>
-                <div className="flex justify-between gap-2 items-center px-5 py-5">
+                <div className={
+                  clsx([
+                    "flex gap-4 items-center px-5 py-5",
+                    "sm:justify-between"
+                  ])
+                }>
                   <img
-                    className="rounded-full border-2 border-white w-11"
+                    className={
+                      clsx([
+                        "rounded-full border-2 border-white w-11",
+                        "lg:w-16",
+                      ])
+                    }
                     src={member.image}
                     alt={member.name}
                     decoding="async"
@@ -86,8 +101,21 @@ export function Hero() {
                   />
 
                   <div>
-                    <p className="text-white font-bold">{member.name}</p>
-                    <span className="text-white -mt-1 block">
+                    <p
+                      className={
+                        clsx([
+                          "text-slate-200 font-bold",
+                          "lg:text-xl lg:-mt-2",
+                        ])
+                      }>
+                      {member.name}
+                    </p>
+                    <span className={
+                      clsx([
+                        "text-slate-300 -mt-1 block",
+                        "lg:text-lg",
+                      ])
+                    }>
                       {member.age} anos
                     </span>
                   </div>

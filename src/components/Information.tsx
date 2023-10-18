@@ -1,7 +1,27 @@
+import clsx from "clsx";
+
+import { horizontalResponsiveClasses } from "../constants";
+
 export function Information() {
   return (
-    <section className="max-w-full overflow-hidden mx-5">
-      <h3 className="text-center font-black text-sm uppercase text-white mt-14">
+    <div className="flex flex-col">
+    <section
+      className={
+        clsx([
+          "w-full self-center max-w-full overflow-hidden px-5",
+          "md:px-0",
+          horizontalResponsiveClasses,
+        ])
+      }
+    >
+      <h3
+          className={
+            clsx([
+              "text-center font-black text-sm uppercase text-slate-400 mt-14",
+              "lg:text-lg"
+            ])
+          }
+        >
         Educação no Brasil
       </h3>
 
@@ -24,5 +44,6 @@ export function Information() {
         loading="lazy"
       />
     </section>
+    </div>
   );
 }
