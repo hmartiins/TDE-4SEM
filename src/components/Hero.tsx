@@ -78,13 +78,14 @@ export function Hero() {
             Integrantes do nosso grupo
           </p>
 
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {MEMBERS.map((member) => (
               <Card key={member.name}>
                 <div className={
                   clsx([
                     "flex gap-4 items-center px-5 py-5",
-                    "sm:justify-between"
+                    "sm:justify-between",
+                    "xl:flex-col",
                   ])
                 }>
                   <img
@@ -92,6 +93,7 @@ export function Hero() {
                       clsx([
                         "rounded-full border-2 border-white w-11",
                         "lg:w-16",
+                        "xl:w-32",
                       ])
                     }
                     src={member.image}
@@ -100,12 +102,13 @@ export function Hero() {
                     loading="lazy"
                   />
 
-                  <div>
+                  <div className="xl:flex xl:flex-col xl:items-center">
                     <p
                       className={
                         clsx([
                           "text-slate-200 font-bold",
                           "lg:text-xl lg:-mt-2",
+                          "xl:text-2xl xl:mt-0",
                         ])
                       }>
                       {member.name}
