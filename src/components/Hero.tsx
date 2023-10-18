@@ -64,7 +64,8 @@ export function Hero() {
 
         <section className={
           clsx([
-            "w-full relative z-40",
+            "w-full relative z-40 px-5",
+            "md:px-0",
             horizontalResponsiveClasses,
           ])
         }>
