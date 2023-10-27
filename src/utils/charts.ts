@@ -2,7 +2,7 @@ import { ChartType } from '../constants/charts';
 
 export function makeDataToChart(
   chartType: ChartType,
-  data: { label?: string, value: number }[]
+  data: { id: number, label?: string, value: number }[]
 ) {
   if (chartType === 'verticalBar' || chartType === 'horizontalBar') {
     return {
@@ -17,17 +17,23 @@ export function makeDataToChart(
   }
 
   if(chartType === 'area' || chartType === 'line') {
-    return {
+    const result = {
       labels: data.map((item) => item.label),
       datasets: [
         {
           data: data.map((item) => item.value),
           fill: true,
           borderColor: "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0"),
-          backgroundColor: "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0"),
+          backgroundColor: "transparent",
         },
       ],
     };
+
+    if(chartType === 'line') {
+      result.datasets[0].backgroundColor = "#" + ((1 << 24) * Math.random() | 0).toString(16).padStart(6, "0");
+    }
+
+    return result;
   }
 
   if(chartType === 'pie' || chartType === 'doughnut') {

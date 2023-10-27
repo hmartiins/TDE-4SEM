@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 import {
   Chart as ChartJS,
@@ -13,6 +13,7 @@ import {
   LineElement,
   Filler,
   RadialLinearScale,
+  ChartOptions,
 } from 'chart.js';
 import { Bar, Doughnut, Line, Pie, Radar } from 'react-chartjs-2';
 
@@ -38,24 +39,31 @@ export function AvarageScoreByRegion() {
   const [selectedChartType, setSelectedChartType] = useState<ChartType>("area");
   const [chart, setChart] = useState<React.ReactNode>();
 
+  const chartRef = useRef();
+
   const dataObject = [
     {
+      id: 1,
       label: "Sudeste",
       value: 537.2,
     },
     {
+      id: 2,
       label: "Sul",
       value: 530.7,
     },
     {
+      id: 3,
       label: "Centro-Oeste",
       value: 512.2,
     },
     {
+      id: 4,
       label: "Nordeste",
       value: 507.7,
     },
     {
+      id: 5,
       label: "Norte",
       value: 486.9,
     },
@@ -63,35 +71,39 @@ export function AvarageScoreByRegion() {
 
   const [data, setData] = useState(makeDataToChart(selectedChartType, dataObject)) as any;
 
-  const options = {
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        position: 'top' as const,
-        display: false,
+  const options: ChartOptions<"line"> &
+    ChartOptions<"bar"> &
+    ChartOptions<"pie"> &
+    ChartOptions<"doughnut"> &
+    ChartOptions<"radar"> = {
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top' as const,
+          display: false,
+        },
+        title: {
+          display: false,
+        }, 
       },
-      title: {
-        display: false,
-      },
-    },
-  };
+    };
 
   const renderChart = () => {
     switch (selectedChartType) {
       case "verticalBar":
-        return setChart(<Bar data={data} options={options} />);
+        return setChart(<Bar ref={chartRef} data={data} options={options} />);
       case "horizontalBar":
-        return setChart(<Bar data={data} options={options} />);
+        return setChart(<Bar ref={chartRef} data={data} options={options} />);
       case "line":
-        return setChart(<Line data={data} options={options} />);
+        return setChart(<Line ref={chartRef} data={data} options={options} />);
       case "pie":
-        return setChart(<Pie data={data} options={options} />);
+        return setChart(<Pie ref={chartRef} data={data} options={options} />);
       case "area":
-        return setChart(<Line data={data} options={options} />);
+        return setChart(<Line ref={chartRef} data={data} options={options} />);
       case "doughnut":
-        return setChart(<Doughnut data={data} options={options} />);
+        return setChart(<Doughnut ref={chartRef} data={data} options={options} />);
       case "radar":
-        return setChart(<Radar data={data} options={options} />);
+        return setChart(<Radar ref={chartRef} data={data} options={options} />);
       default:
         return setChart(null);
     }
@@ -195,7 +207,7 @@ export function AvarageScoreByRegion() {
         <div
           className={
             clsx([
-              "w-full px-5 flex flex-col items-center z-40 relative",
+              "w-full px-5 flex z-40 relative",
               "flex-[2] overflow-hidden",
               "md:self-center md:px-0",
               "xl:gap-2 xl:self-center",
@@ -203,7 +215,7 @@ export function AvarageScoreByRegion() {
             ])
           }
         >
-           {chart}
+            {chart}
         </div>
       </div>
     </div>
