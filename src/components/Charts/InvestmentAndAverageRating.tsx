@@ -1,28 +1,200 @@
-import { Chart, ChartWrapperOptions } from "react-google-charts";
+import { useEffect, useRef, useState } from "react";
+import clsx from "clsx";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  ArcElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+  Filler,
+  RadialLinearScale,
+  ChartOptions,
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 
-const data = [
-  ["", "Investimento", "Nota Média"],
-  ["Norte", 0.91, 0.24],
-  ["Nordeste", 0.56, 0.95],
-  ["Centro-Oeste", 1.0, 0.96],
-  ["Sudeste", 0.7, 1.0],
-  ["Sul", 0.34, 0.99],
-];
+import { horizontalResponsiveClasses, chartsTypes, ChartType } from "../../constants";
+import { Select } from "..";
+import { makeDataToChart } from "../../utils";
 
-const options: ChartWrapperOptions["options"] = {
-  chart: {
-    title: "Comparação de Investimento e Nota Média por Região",
-  },
-};
+ChartJS.register(
+  CategoryScale,
+  ArcElement,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  PointElement,
+  LineElement,
+  Filler,
+  RadialLinearScale,
+);
 
 export function InvestmentAndAverageRating() {
+  const [selectedChartType, setSelectedChartType] = useState<ChartType>("verticalBar");
+  const [chart, setChart] = useState<React.ReactNode>();
+
+  const options: ChartOptions<"line"> &
+    ChartOptions<"bar"> &
+    ChartOptions<"pie"> &
+    ChartOptions<"doughnut"> = { 
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top' as const,
+          display: true,
+        },
+        title: {
+          display: false,
+        }, 
+      },
+    };
+
+  const chartRef = useRef();
+
+  const dataObject = [
+    {
+      id: 1,
+      label: "Sudeste",
+      values: [537.2, 500],
+    },
+    {
+      id: 1,
+      label: "Sul",
+      values: [530.7, 400],
+    },
+    {
+      id: 1,
+      label: "Centro-Oeste",
+      values: [512.2, 300],
+    },
+    {
+      id: 1,
+      label: "Nordeste",
+      values: [507.7, 200],
+    },
+    {
+      id: 1,
+      label: "Norte",
+      values: [486.9, 100],
+    },
+  ];
+
+  const [data, setData] = useState(
+    makeDataToChart(
+      selectedChartType,
+      dataObject,
+      ["Investimento", "Nota Média"],
+    )
+  ) as any;
+
+  const renderChart = () => {
+    switch (selectedChartType) {
+      case "verticalBar":
+        return setChart(<Bar ref={chartRef} data={data} options={options} />);
+      default:
+        return setChart(null);
+    }
+  };
+
+  useEffect(() => {
+    setData(makeDataToChart(selectedChartType, dataObject, ["Investimento", "Nota Média"]));
+
+    renderChart();
+  }, [selectedChartType]);
+
   return (
-    <Chart
-      chartType="Bar"
-      width="100%"
-      height="200px"
-      data={data}
-      options={options}
-    />
+    <div className={
+      "relative py-4 max-w-full flex flex-col overflow-hidden bg-slate-50"
+    }>
+      <div
+        className={
+          clsx([
+            "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-slate-100",
+            "flex-[2] overflow-hidden",
+            "md:self-center",
+            "xl:gap-2 xl:self-center",
+            horizontalResponsiveClasses,
+          ])
+        }
+      >
+        <header
+          className={
+            clsx([
+              "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-slate-50",
+              "flex-[2] overflow-hidden",
+              "md:self-center",
+              "xl:gap-2 xl:self-center",
+              horizontalResponsiveClasses,
+            ])
+          }
+        >
+          <h2
+            className={
+              clsx([
+                "w-full text-2xl text-slate-700 font-bold text-left pb-4",
+              ])
+            }
+          >
+            Comparação de Investimento e Nota Média por Região
+          </h2>
+
+          <div
+            className={
+              clsx([
+                "w-full flex flex-col gap-4",
+                "md:flex-row gap-5",
+                "lg:gap-10",
+              ])
+            }
+          >
+            <div
+              className={
+                clsx([
+                  "flex-1"
+                ])
+              }
+            >
+              <Select
+                id="chart-type"
+                // label="Visualização do gráfico"
+                label=""
+                onChange={(e) => setSelectedChartType(e.target.value as ChartType)}
+              >
+                {chartsTypes.map((item) => (
+                  <option
+                    key={item.value}
+                    value={item.value}
+                    selected={item.value === selectedChartType}
+                  >
+                    {item.label}
+                  </option>
+                ))}
+              </Select>
+            </div>
+          </div>
+        </header>
+
+        <div
+          className={
+            clsx([
+              "w-full px-5 flex z-40 relative min-h-[500px]",
+              "flex-[2] overflow-hidden",
+              "md:self-center md:px-0",
+              "xl:gap-2 xl:self-center",
+              horizontalResponsiveClasses,
+            ])
+          }
+        >
+            {chart}
+        </div>
+      </div>
+    </div>
   );
 }
+

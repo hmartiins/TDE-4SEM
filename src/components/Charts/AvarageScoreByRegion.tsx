@@ -15,7 +15,7 @@ import {
   RadialLinearScale,
   ChartOptions,
 } from 'chart.js';
-import { Bar, Doughnut, Line, Pie, Radar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 import { horizontalResponsiveClasses, chartsTypes, ChartType } from "../../constants";
 import { Select } from "..";
@@ -36,7 +36,7 @@ ChartJS.register(
 );
 
 export function AvarageScoreByRegion() {
-  const [selectedChartType, setSelectedChartType] = useState<ChartType>("area");
+  const [selectedChartType, setSelectedChartType] = useState<ChartType>("verticalBar");
   const [chart, setChart] = useState<React.ReactNode>();
 
   const chartRef = useRef();
@@ -45,42 +45,43 @@ export function AvarageScoreByRegion() {
     {
       id: 1,
       label: "Sudeste",
-      value: 537.2,
+      values: [537.2],
     },
     {
-      id: 2,
+      id: 1,
       label: "Sul",
-      value: 530.7,
+      values: [530.7],
     },
     {
-      id: 3,
+      id: 1,
       label: "Centro-Oeste",
-      value: 512.2,
+      values: [512.2],
     },
     {
-      id: 4,
+      id: 1,
       label: "Nordeste",
-      value: 507.7,
+      values: [507.7],
     },
     {
-      id: 5,
+      id: 1,
       label: "Norte",
-      value: 486.9,
+      values: [486.9],
     },
   ];
 
-  const [data, setData] = useState(makeDataToChart(selectedChartType, dataObject)) as any;
+  const [data, setData] = useState(
+    makeDataToChart(selectedChartType, dataObject, [""])
+  ) as any;
 
   const options: ChartOptions<"line"> &
     ChartOptions<"bar"> &
     ChartOptions<"pie"> &
-    ChartOptions<"doughnut"> &
-    ChartOptions<"radar"> = {
+    ChartOptions<"doughnut"> = {
       maintainAspectRatio: false,
       plugins: {
         legend: {
           position: 'top' as const,
-          display: false,
+          display: true,
         },
         title: {
           display: false,
@@ -92,25 +93,13 @@ export function AvarageScoreByRegion() {
     switch (selectedChartType) {
       case "verticalBar":
         return setChart(<Bar ref={chartRef} data={data} options={options} />);
-      case "horizontalBar":
-        return setChart(<Bar ref={chartRef} data={data} options={options} />);
-      case "line":
-        return setChart(<Line ref={chartRef} data={data} options={options} />);
-      case "pie":
-        return setChart(<Pie ref={chartRef} data={data} options={options} />);
-      case "area":
-        return setChart(<Line ref={chartRef} data={data} options={options} />);
-      case "doughnut":
-        return setChart(<Doughnut ref={chartRef} data={data} options={options} />);
-      case "radar":
-        return setChart(<Radar ref={chartRef} data={data} options={options} />);
       default:
         return setChart(null);
     }
   };
 
   useEffect(() => {
-    setData(makeDataToChart(selectedChartType, dataObject));
+    setData(makeDataToChart(selectedChartType, dataObject, [""]));
     renderChart();
   }, [selectedChartType]);
 
@@ -168,7 +157,8 @@ export function AvarageScoreByRegion() {
             >
               <Select
                 id="chart-type"
-                label="Visualização do gráfico"
+                // label="Visualização do gráfico"
+                label=""
                 onChange={(e) => setSelectedChartType(e.target.value as ChartType)}
               >
                 {chartsTypes.map((item) => (
@@ -182,32 +172,13 @@ export function AvarageScoreByRegion() {
                 ))}
               </Select>
             </div>
-
-            <div
-              className={
-                clsx([
-                  "flex-1"
-                ])
-              }
-            >
-              <Select
-                id="chart-interaction-mode"
-                label="Modo de iteração"
-              >
-                <option selected>Choose a country</option>
-                <option value="US">United States</option>
-                <option value="CA">Canada</option>
-                <option value="FR">France</option>
-                <option value="DE">Germany</option>
-              </Select>
-            </div>
           </div>
         </header>
 
         <div
           className={
             clsx([
-              "w-full px-5 flex z-40 relative",
+              "w-full px-5 flex z-40 relative min-h-[500px]",
               "flex-[2] overflow-hidden",
               "md:self-center md:px-0",
               "xl:gap-2 xl:self-center",
