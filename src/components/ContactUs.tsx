@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 import { horizontalResponsiveClasses } from "../constants";
-import { Input } from "./Input";
+import { ContactUsForm } from "./ContactUsForm";
 
 export function ContactUs() {
   return (
@@ -31,6 +31,8 @@ export function ContactUs() {
           Dúvidas? Sugestões? Não hesite em nos contatar para qualquer pergunta
           ou comentário. Basta apenas preencher esse simples formulário abaixo.
         </p>
+
+        <ContactUsForm />
       </section>
     </div>
   );
