@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Card";
+export * from "./ContactUs";
 export * from "./Description";
 export * from "./Hero";
 export * from "./Header";

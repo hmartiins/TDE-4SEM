@@ -130,7 +130,12 @@ export function Hero() {
                           "lg:text-lg",
                         ])}
                       >
-                        <img width={15} src="./assets/cnpqLogo.png" />
+                        <img
+                          alt="Logo do CNPQ"
+                          aria-label="Logo do CNPQ"
+                          width={15}
+                          src="./assets/cnpqLogo.png"
+                        />
                       </a>
                       <a
                         href={member.linkedinURL}
@@ -169,7 +174,7 @@ export function Hero() {
       <img
         className="z-10 opacity-70 absolute top-[400px] w-[180%] max-w-none md:w-[132%] md:left-[-80px] lg:w-full lg:top-[280px] lg:right-0 lg:left-auto xl:w-[1240px] xl:top-0"
         src="./assets/splash01.webp"
-        alt="aa"
+        alt="Splash Art"
       />
       <img
         className="hidden opacity-70 absolute z-20 w-[50%] top-0 right-0 xl:block"

@@ -1,4 +1,10 @@
-import { Description, Header, Hero, Information } from "./components";
+import {
+  ContactUs,
+  Description,
+  Header,
+  Hero,
+  Information,
+} from "./components";
 import {
   AvarageScoreByRegion,
   GenderDistribution,
@@ -16,6 +22,8 @@ export function App() {
         <Information />
 
         <Description />
+
+        <ContactUs />
 
         <AvarageScoreByRegion />
         <GenderDistribution />
