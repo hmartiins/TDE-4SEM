@@ -17,12 +17,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-import {
-  horizontalResponsiveClasses,
-  chartsTypes,
-  ChartType,
-} from "../../constants";
-import { Select } from "..";
+import { horizontalResponsiveClasses, ChartType } from "../../constants";
 import { makeDataToChart } from "../../utils";
 
 ChartJS.register(
@@ -40,8 +35,7 @@ ChartJS.register(
 );
 
 export function InvestmentAndAverageRating() {
-  const [selectedChartType, setSelectedChartType] =
-    useState<ChartType>("verticalBar");
+  const selectedChartType = "verticalBar";
   const [chart, setChart] = useState<React.ReactNode>();
 
   const options: ChartOptions<"line"> &
