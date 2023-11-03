@@ -14,10 +14,14 @@ import {
   Filler,
   RadialLinearScale,
   ChartOptions,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
 
-import { horizontalResponsiveClasses, chartsTypes, ChartType } from "../../constants";
+import {
+  horizontalResponsiveClasses,
+  chartsTypes,
+  ChartType,
+} from "../../constants";
 import { Select } from "..";
 import { makeDataToChart } from "../../utils";
 
@@ -32,28 +36,35 @@ ChartJS.register(
   PointElement,
   LineElement,
   Filler,
-  RadialLinearScale,
+  RadialLinearScale
 );
 
 export function InvestmentAndAverageRating() {
-  const [selectedChartType, setSelectedChartType] = useState<ChartType>("verticalBar");
+  const [selectedChartType, setSelectedChartType] =
+    useState<ChartType>("verticalBar");
   const [chart, setChart] = useState<React.ReactNode>();
 
   const options: ChartOptions<"line"> &
     ChartOptions<"bar"> &
     ChartOptions<"pie"> &
-    ChartOptions<"doughnut"> = { 
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          position: 'top' as const,
-          display: true,
+    ChartOptions<"doughnut"> = {
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        position: "top" as const,
+        display: true,
+        labels: {
+          color: "#fff",
+          font: {
+            size: 16,
+          },
         },
-        title: {
-          display: false,
-        }, 
       },
-    };
+      title: {
+        display: false,
+      },
+    },
+  };
 
   const chartRef = useRef();
 
@@ -86,11 +97,10 @@ export function InvestmentAndAverageRating() {
   ];
 
   const [data, setData] = useState(
-    makeDataToChart(
-      selectedChartType,
-      dataObject,
-      ["Investimento", "Nota Média"],
-    )
+    makeDataToChart(selectedChartType, dataObject, [
+      "Investimento",
+      "Nota Média",
+    ])
   ) as any;
 
   const renderChart = () => {
@@ -103,98 +113,51 @@ export function InvestmentAndAverageRating() {
   };
 
   useEffect(() => {
-    setData(makeDataToChart(selectedChartType, dataObject, ["Investimento", "Nota Média"]));
+    setData(
+      makeDataToChart(selectedChartType, dataObject, [
+        "Investimento",
+        "Nota Média",
+      ])
+    );
 
     renderChart();
   }, [selectedChartType]);
 
   return (
-    <div className={
-      "relative py-4 max-w-full flex flex-col overflow-hidden bg-slate-50"
-    }>
+    <div
+      className={
+        "relative py-4 max-w-full flex flex-col overflow-hidden bg-dark"
+      }
+    >
       <div
-        className={
-          clsx([
-            "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-slate-100",
-            "flex-[2] overflow-hidden",
-            "md:self-center",
-            "xl:gap-2 xl:self-center",
-            horizontalResponsiveClasses,
-          ])
-        }
+        className={clsx([
+          "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-dark",
+          "flex-[2] overflow-hidden",
+          "md:self-center",
+          "xl:gap-2 xl:self-center",
+          horizontalResponsiveClasses,
+        ])}
       >
-        <header
-          className={
-            clsx([
-              "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-slate-50",
-              "flex-[2] overflow-hidden",
-              "md:self-center",
-              "xl:gap-2 xl:self-center",
-              horizontalResponsiveClasses,
-            ])
-          }
+        <h2
+          className={clsx([
+            "w-full text-2xl text-white font-bold text-left pb-4",
+          ])}
         >
-          <h2
-            className={
-              clsx([
-                "w-full text-2xl text-slate-700 font-bold text-left pb-4",
-              ])
-            }
-          >
-            Comparação de Investimento e Nota Média por Região
-          </h2>
-
-          <div
-            className={
-              clsx([
-                "w-full flex flex-col gap-4",
-                "md:flex-row gap-5",
-                "lg:gap-10",
-              ])
-            }
-          >
-            <div
-              className={
-                clsx([
-                  "flex-1"
-                ])
-              }
-            >
-              <Select
-                id="chart-type"
-                // label="Visualização do gráfico"
-                label=""
-                onChange={(e) => setSelectedChartType(e.target.value as ChartType)}
-              >
-                {chartsTypes.map((item) => (
-                  <option
-                    key={item.value}
-                    value={item.value}
-                    selected={item.value === selectedChartType}
-                  >
-                    {item.label}
-                  </option>
-                ))}
-              </Select>
-            </div>
-          </div>
-        </header>
+          Comparação de Investimento e Nota Média por Região
+        </h2>
 
         <div
-          className={
-            clsx([
-              "w-full px-5 flex z-40 relative min-h-[500px]",
-              "flex-[2] overflow-hidden",
-              "md:self-center md:px-0",
-              "xl:gap-2 xl:self-center",
-              horizontalResponsiveClasses,
-            ])
-          }
+          className={clsx([
+            "w-full px-5 flex z-40 relative min-h-[500px]",
+            "flex-[2] overflow-hidden",
+            "md:self-center md:px-0",
+            "xl:gap-2 xl:self-center",
+            horizontalResponsiveClasses,
+          ])}
         >
-            {chart}
+          {chart}
         </div>
       </div>
     </div>
   );
 }
-

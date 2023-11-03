@@ -23,12 +23,12 @@ export function App() {
 
         <Description />
 
-        <ContactUs />
-
         <AvarageScoreByRegion />
         <GenderDistribution />
         <InvestmentAndAverageRating />
         <RegionPercentage />
+
+        <ContactUs />
       </main>
     </>
   );

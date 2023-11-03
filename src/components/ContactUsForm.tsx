@@ -32,7 +32,7 @@ export function ContactUsForm() {
   return (
     <form
       onSubmit={handleSubmit(handleSubmitContactUsForm)}
-      className="flex flex-col gap-4 my-6 p-5 border border-gray-500 rounded-lg"
+      className="flex flex-col gap-4 my-6 p-5 border border-white rounded-lg"
     >
       <div className="flex w-full gap-4">
         <Input
