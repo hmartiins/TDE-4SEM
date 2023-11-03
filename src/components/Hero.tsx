@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { LinkedinLogo } from "@phosphor-icons/react";
+import { LinkedinLogo, EnvelopeSimple } from "@phosphor-icons/react";
 
 import { Button, Card } from ".";
 import { MEMBERS, horizontalResponsiveClasses } from "../constants";
@@ -144,6 +144,18 @@ export function Hero() {
                         ])}
                       >
                         <LinkedinLogo weight="bold" />
+                      </a>
+
+                      <a
+                        title="Contatar por E-mail"
+                        aria-label="Contatar por E-mail"
+                        href={`mailto:${member.email}`}
+                        className={clsx([
+                          "flex items-center gap-2 text-white",
+                          "lg:text-lg",
+                        ])}
+                      >
+                        <EnvelopeSimple weight="bold" />
                       </a>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ export const MEMBERS = [
     age: 19,
     linkedinURL: "https://www.linkedin.com/in/henrique-martins-03436/",
     lattesURL: "http://lattes.cnpq.br/7911434714431083",
+    email: "henrique.martins@unisantos.br",
   },
   {
     name: "Leticia",
@@ -12,6 +13,7 @@ export const MEMBERS = [
     age: 20,
     linkedinURL: "https://www.linkedin.com/in/leticia-silverio-dev",
     lattesURL: "http://lattes.cnpq.br/4744366318749983",
+    email: "leticia.silverio@unisantos.br",
   },
   {
     name: "Rennys",
@@ -19,13 +21,16 @@ export const MEMBERS = [
     age: 24,
     linkedinURL: "https://www.linkedin.com/in/rennys-cardoso/",
     lattesURL: "http://lattes.cnpq.br/0914763769847180",
+    email: "rennys.cardoso@unisantos.br",
   },
   {
     name: "Vitor",
     image: "/assets/peoples/victor.jpg",
     age: 23,
-    linkedinURL: "https://www.linkedin.com/in/gabrielqcarvalho/",
-    lattesURL: "http://lattes.cnpq.br/9459294079198798",
+    linkedinURL:
+      "https://www.linkedin.com/in/v%C3%ADtor-roggeri-cavicchiolli-23545a1b3/",
+    lattesURL: "http://lattes.cnpq.br/5871438354190675",
+    email: "vitor.cavicchiolli@unisantos.br",
   },
   {
     name: "Gabriel",
@@ -33,6 +38,7 @@ export const MEMBERS = [
     age: 22,
     linkedinURL: "https://www.linkedin.com/in/gabrielqcarvalho/",
     lattesURL: "http://lattes.cnpq.br/9459294079198798",
+    email: "gabrielcbarros@unisantos.br",
   },
   {
     name: "João",
@@ -40,5 +46,6 @@ export const MEMBERS = [
     age: 19,
     linkedinURL: "https://www.linkedin.com/in/gabrielqcarvalho/",
     lattesURL: "http://lattes.cnpq.br/9459294079198798",
+    email: "joao.victor@unisantos.br",
   },
 ];
