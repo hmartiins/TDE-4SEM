@@ -1,6 +1,7 @@
 import {
   ContactUs,
   Description,
+  Footer,
   Header,
   Hero,
   Information,
@@ -30,6 +31,8 @@ export function App() {
 
         <ContactUs />
       </main>
+
+      <Footer />
     </>
   );
 }

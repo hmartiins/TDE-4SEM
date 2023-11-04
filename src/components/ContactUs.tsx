@@ -5,7 +5,7 @@ import { ContactUsForm } from "./ContactUsForm";
 
 export function ContactUs() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col relative">
       <section
         className={clsx([
           "w-full self-center max-w-full overflow-hidden px-5",
