@@ -44,13 +44,21 @@ export function Hero() {
             "xl:w-1/2 xl:self-start",
           ])}
         >
-          <Button
-            type="button"
+          <a
             title="Baixar Documento"
             aria-label="Baixar Documento"
+            className="w-full"
+            target="_blank"
+            href="https://firebasestorage.googleapis.com/v0/b/tdeunisantos.appspot.com/o/TDE%204%C2%BA%20Sem%20Oficial%20(1).docx?alt=media&token=d15321f8-8abd-4232-9339-55c2bdac49e0&_gl=1*dqhtab*_ga*NzI5MzEzNjI0LjE2ODA3MTkyMDM.*_ga_CW55HF8NVT*MTY5OTEyMDU5OC4xNzUuMS4xNjk5MTIwNjk3LjM5LjAuMA.."
           >
-            Baixar Documento
-          </Button>
+            <Button
+              type="button"
+              title="Baixar Documento"
+              aria-label="Baixar Documento"
+            >
+              Baixar Documento
+            </Button>
+          </a>
         </div>
       </header>
 
