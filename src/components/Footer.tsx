@@ -18,6 +18,8 @@ export function Footer() {
             href="https://www.linkedin.com/in/unisantos/"
             target="_blank"
             rel="noopener noreferrer"
+            title="LinkedIn da Universidade Católica de Santos"
+            aria-label="LinkedIn da Universidade Católica de Santos"
             className="hover:opacity-50 active:opacity-30 transition-all py-2 lg:py-0 px-4"
           >
             <LinkedinLogo size={26} weight="bold" />
@@ -26,6 +28,8 @@ export function Footer() {
             href="https://www.facebook.com/catolicaunisantos/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Facebook da Universidade Católica de Santos"
+            aria-label="Facebook da Universidade Católica de Santos"
             className="hover:opacity-50 active:opacity-30 transition-all py-2 lg:py-0 px-4"
           >
             <FacebookLogo size={26} weight="bold" />
@@ -34,6 +38,8 @@ export function Footer() {
             href="https://x.com/unisantosweb?s=11"
             target="_blank"
             rel="noopener noreferrer"
+            title="Twitter da Universidade Católica de Santos"
+            aria-label="Twitter da Universidade Católica de Santos"
             className="hover:opacity-50 active:opacity-30 transition-all py-2 lg:py-0 px-4"
           >
             <TwitterLogo size={26} weight="bold" />
@@ -42,6 +48,8 @@ export function Footer() {
             href="https://www.instagram.com/catolicadesantos/"
             target="_blank"
             rel="noopener noreferrer"
+            title="Instagram da Universidade Católica de Santos"
+            aria-label="Instagram da Universidade Católica de Santos"
             className="hover:opacity-50 active:opacity-30 transition-all py-2 lg:py-0 px-4"
           >
             <InstagramLogo size={26} weight="bold" />
