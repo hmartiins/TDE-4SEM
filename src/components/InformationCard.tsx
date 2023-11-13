@@ -11,7 +11,7 @@ export function InformationCard({ text, title }: InformationCardProps) {
       <div className="flex flex-col gap-[15px] py-2">
         <b className="text-white font-black text-lg">{title}</b>
 
-        <p className="text-white opacity-70">{text}</p>
+        {/* <p className="text-white opacity-70">{text}</p> */}
       </div>
     </article>
   );

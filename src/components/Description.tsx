@@ -13,10 +13,6 @@ export function Description() {
           horizontalResponsiveClasses,
         ])}
       >
-        <p className="text-white font-black text-sm mb-5 uppercase">
-          key benefits
-        </p>
-
         <h4 className="font-black text-white text-[28px] mb-7">
           As perguntas que queriamos{" "}
           <span className="text-blue-500">sanar</span>

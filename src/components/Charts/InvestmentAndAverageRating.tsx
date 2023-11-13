@@ -124,13 +124,14 @@ export function InvestmentAndAverageRating() {
       }
     >
       <p className="px-4 my-5 text-left text-lg text-white leading-7 max-w-screen-xl mx-auto">
-        O gráfico abaixo demonstra a distribuição percentual dos investimentos
-        em educação nas diferentes regiões do Brasil. Utilizando as informações
-        contidas no conjunto de dados, foi realizado um cálculo para determinar
-        a porcentagem de investimento de cada região em relação ao total geral.
-        Com base nesses cálculos, constatou-se que, no ano de 2021, a região
-        Centro-Oeste foi a que mais investiu na área educacional.
+        O gráfico compara o investimento em educação normalizado (barras verdes)
+        com as notas médias do ENEM também normalizadas (barras azuis) por
+        região brasileira. Observa-se que a região Centro-Oeste tem o maior
+        investimento, enquanto a região Sudeste apresenta a melhor performance
+        em notas, ambos atingindo o valor máximo normalizado de 1 na sua
+        categoria.
       </p>
+
       <div
         className={clsx([
           "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-dark",

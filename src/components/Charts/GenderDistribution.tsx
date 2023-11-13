@@ -78,14 +78,6 @@ export function GenderDistribution() {
         "relative py-4 max-w-full flex flex-col overflow-hidden bg-dark"
       }
     >
-      <p className="px-4 my-5 text-left text-lg text-white leading-7 max-w-screen-xl mx-auto">
-        O gráfico compara o investimento em educação normalizado (barras verdes)
-        com as notas médias do ENEM também normalizadas (barras azuis) por
-        região brasileira. Observa-se que a região Centro-Oeste tem o maior
-        investimento, enquanto a região Sudeste apresenta a melhor performance
-        em notas, ambos atingindo o valor máximo normalizado de 1 na sua
-        categoria.
-      </p>
       <div
         className={clsx([
           "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-dark",
