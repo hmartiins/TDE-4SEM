@@ -5,7 +5,17 @@ import { Input } from "./Input";
 import { Button, Textarea } from ".";
 
 const contactUsFormSchema = z.object({
-  name: z.string().min(1, "Campo obrigatório."),
+  name: z
+    .string()
+    .min(1, "Campo obrigatório.")
+    .refine(
+      (data) => {
+        return !/\d/.test(data);
+      },
+      {
+        message: "O nome não pode conter números.",
+      }
+    ),
   subject: z.string().min(1, "Campo obrigatório."),
   message: z.string().min(1, "Campo obrigatório."),
 });
