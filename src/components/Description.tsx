@@ -19,24 +19,9 @@ export function Description() {
         </h4>
 
         <div className="flex flex-col gap-5">
-          <InformationCard
-            title="O desempenho dos estudantes brasileiros reflete os investimentos?"
-            text="Every team has a unique process for shipping software. Use an
-            out-of-the-box workflow, or create one to match the way your team
-            works."
-          />
-          <InformationCard
-            title="Disparidade entre estudantes de escolas públicas e escolas privada"
-            text="Every team has a unique process for shipping software. Use an
-            out-of-the-box workflow, or create one to match the way your team
-            works."
-          />
-          <InformationCard
-            title="Gastos aplicados de forma equitativa"
-            text="Every team has a unique process for shipping software. Use an
-            out-of-the-box workflow, or create one to match the way your team
-            works."
-          />
+          <InformationCard title="O desempenho dos estudantes brasileiros reflete os investimentos?" />
+          <InformationCard title="Disparidade entre estudantes de escolas públicas e escolas privada" />
+          <InformationCard title="Gastos aplicados de forma equitativa" />
         </div>
 
         <img

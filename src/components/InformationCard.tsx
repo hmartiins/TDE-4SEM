@@ -1,9 +1,8 @@
 interface InformationCardProps {
   title: string;
-  text: string;
 }
 
-export function InformationCard({ text, title }: InformationCardProps) {
+export function InformationCard({ title }: InformationCardProps) {
   return (
     <article className="group w-full flex gap-[18px]">
       <div className="w-[2px] bg-gray-500 group-hover:bg-blue-500 transition-all duration-700"></div>
