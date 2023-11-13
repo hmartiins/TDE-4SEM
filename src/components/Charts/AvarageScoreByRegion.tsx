@@ -109,11 +109,15 @@ export function AvarageScoreByRegion() {
   }, [selectedChartType]);
 
   return (
-    <div
-      className={
-        "relative py-4 max-w-full flex flex-col overflow-hidden bg-dark"
-      }
-    >
+    <div className={"relative py-4  flex flex-col overflow-hidden bg-dark"}>
+      <p className="px-4 my-5 text-left text-lg text-white leading-7 max-w-screen-xl mx-auto">
+        O gráfico abaixo apresenta as notas médias do ENEM por região do Brasil
+        em ordem decrescente, com o Sudeste liderando. Para a geração desse
+        gráfico, foi realizada a soma de todas as notas dos estudantes de cada
+        estado e dividido pelas suas respectivas regiões, dessa forma
+        descobrimos a média de cada região. Em seguida, as médias foram
+        ordenadas em ordem decrescente.
+      </p>
       <div
         className={clsx([
           "w-full p-5 flex flex-col items-center z-40 relative border rounded-md bg-dark",

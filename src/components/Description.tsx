@@ -7,38 +7,36 @@ export function Description() {
   return (
     <div className="flex flex-col">
       <section
-        className={
-          clsx([
-            "w-full self-center max-w-full overflow-hidden px-5 mt-14",
-            "md:px-0",
-            horizontalResponsiveClasses,
-          ])
-        }
+        className={clsx([
+          "w-full self-center max-w-full overflow-hidden px-5 mt-14",
+          "md:px-0",
+          horizontalResponsiveClasses,
+        ])}
       >
         <p className="text-white font-black text-sm mb-5 uppercase">
           key benefits
         </p>
 
         <h4 className="font-black text-white text-[28px] mb-7">
-          Your business will reach{" "}
-          <span className="text-blue-500">unprecedented heights</span>
+          As perguntas que queriamos{" "}
+          <span className="text-blue-500">sanar</span>
         </h4>
 
         <div className="flex flex-col gap-5">
           <InformationCard
-            title="Be more productive"
+            title="O desempenho dos estudantes brasileiros reflete os investimentos?"
             text="Every team has a unique process for shipping software. Use an
             out-of-the-box workflow, or create one to match the way your team
             works."
           />
           <InformationCard
-            title="Be more productive"
+            title="Disparidade entre estudantes de escolas públicas e escolas privada"
             text="Every team has a unique process for shipping software. Use an
             out-of-the-box workflow, or create one to match the way your team
             works."
           />
           <InformationCard
-            title="Be more productive"
+            title="Gastos aplicados de forma equitativa"
             text="Every team has a unique process for shipping software. Use an
             out-of-the-box workflow, or create one to match the way your team
             works."
@@ -56,4 +54,3 @@ export function Description() {
     </div>
   );
 }
-
